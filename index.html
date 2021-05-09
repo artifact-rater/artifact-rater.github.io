@@ -1,7 +1,36 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <link rel="stylesheet" href="src/css/styles.css">
+</head>
+
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+
+    <!-- rater info -->
+    <section>
+        <div class="spacer"></div>
+        <h1 class="text-center">Artifact Rater</h1>
+        <p class="text-center">Enter values and hit the rate button.</p>
+        <div class="spacer"></div>
+    </section>
+
+    <!-- data -->
+    <section>
+        <div class="grid-container">
+            <div class="datablock">
+                <button type="button" onclick="rate()">Rate</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- results -->
+    <section>
+        <div class="spacer"></div>
+        <h2 class="text-center" id="result" style="display:none">Loading...</p>
+    </section>
+
+    <!-- scripts -->
+    <script src="src/js/item.js"></script>
 </body>
 </html>
