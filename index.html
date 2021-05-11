@@ -3,6 +3,9 @@
 
 <head>
     <link rel="stylesheet" href="src/css/styles.css">
+    <script>
+        document.addEventListener('DOMContentLoaded', function() { init(); }, false);
+    </script>
 </head>
 
 <body>
@@ -11,26 +14,108 @@
     <section>
         <div class="spacer"></div>
         <h1 class="text-center">Artifact Rater</h1>
-        <p class="text-center">Enter values and hit the rate button.</p>
+        <p class="text-center"><sub>v0.02</sub></p>
+        <p class="text-center"><sub>Enter values and hit the rate button.</sub></p>
         <div class="spacer"></div>
     </section>
 
     <!-- data -->
-    <section>
-        <div class="grid-container">
-            <div class="datablock">
-                <button type="button" onclick="rate()">Rate</button>
+    <section id="datablocksElement">
+        <div id="grid-container" class="grid-container">
+            
+            <div id="datablockTemplate" class="datablock, hidden">
+                <span class="span-inline">
+                    <span class="attribute-label">Target substat #1</span>
+                    <select name="tss1" id="tss1">
+                        <option value="a">ATK</option>
+                        <option value="a%">ATK%</option>
+                        <option value="cd">CRIT DMG</option>
+                        <option value="cr">CRIT RATE</option>
+                        <option value="d">DEF</option>
+                        <option value="d%">DEF%</option>
+                        <option value="em">EM</option>
+                        <option value="er">ER</option>
+                        <option value="hp">HP</option>
+                        <option value="h%">HP%</option>
+                    </select>
+                    <br>
+                </span>
+                <span class="span-inline">
+                    <span class="attribute-label">Target substat #2</span>
+                    <select name="tss2" id="tss2">
+                        <option value="a">ATK</option>
+                        <option value="a%">ATK%</option>
+                        <option value="cd">CRIT DMG</option>
+                        <option value="cr">CRIT RATE</option>
+                        <option value="d">DEF</option>
+                        <option value="d%">DEF%</option>
+                        <option value="em">EM</option>
+                        <option value="er">ER</option>
+                        <option value="hp">HP</option>
+                        <option value="h%">HP%</option>
+                    </select>
+                    <br>
+                </span>
+                <span class="span-inline">
+                    <span class="attribute-label">Target substat #3</span>
+                    <select name="tss3" id="tss3">
+                        <option value="a">ATK</option>
+                        <option value="a%">ATK%</option>
+                        <option value="cd">CRIT DMG</option>
+                        <option value="cr">CRIT RATE</option>
+                        <option value="d">DEF</option>
+                        <option value="d%">DEF%</option>
+                        <option value="em">EM</option>
+                        <option value="er">ER</option>
+                        <option value="hp">HP</option>
+                        <option value="h%">HP%</option>
+                    </select>
+                    <br>
+                </span>
+                <span class="span-inline">
+                    <span class="attribute-label">Target substat #4</span>
+                    <select name="tss4" id="tss4">
+                        <option value="a">ATK</option>
+                        <option value="a%">ATK%</option>
+                        <option value="cd">CRIT DMG</option>
+                        <option value="cr">CRIT RATE</option>
+                        <option value="d">DEF</option>
+                        <option value="d%">DEF%</option>
+                        <option value="em">EM</option>
+                        <option value="er">ER</option>
+                        <option value="hp">HP</option>
+                        <option value="h%">HP%</option>
+                    </select>
+                    <br>
+                </span>
+                <span class="span-inline">
+                    <span class="attribute-label">Target substat #5</span>
+                    <select name="tss5" id="tss5">
+                        <option value="a">ATK</option>
+                        <option value="a%">ATK%</option>
+                        <option value="cd">CRIT DMG</option>
+                        <option value="cr">CRIT RATE</option>
+                        <option value="d">DEF</option>
+                        <option value="d%">DEF%</option>
+                        <option value="em">EM</option>
+                        <option value="er">ER</option>
+                        <option value="hp">HP</option>
+                        <option value="h%">HP%</option>
+                    </select>
+                    <br>
+                </span>
+                <br>
+                <button type="button" onclick="rate(-1)">Rate</button>
+                <section>
+                    <h2 class="text-center, result-text" id="rst" style="display:none">Loading...</p>
+                </section>
             </div>
+
         </div>
     </section>
 
-    <!-- results -->
-    <section>
-        <div class="spacer"></div>
-        <h2 class="text-center" id="result" style="display:none">Loading...</p>
-    </section>
-
     <!-- scripts -->
+    <script src="src/js/rater.js"></script>
     <script src="src/js/item.js"></script>
 </body>
 </html>
