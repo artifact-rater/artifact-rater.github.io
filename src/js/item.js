@@ -1,20 +1,20 @@
 var arr;
 
-function init() {
-    arr = new itemArray();
-}
-
 class itemArray {
     constructor() {
         this.data = [];
         if (!this.data.length) {
-            this.data.push(new item(this.data.length));
-            this.data.push(new item(this.data.length));
+            this.addItem();
+            this.addItem();
         }
     }
 
     rateRedir(id) {
         this.data[id].rateImpl();
+    }
+
+    addItem() {
+        this.data.push(new item(this.data.length));
     }
 }
 
@@ -42,6 +42,14 @@ class item {
     }
 }
 
+function init() {
+    arr = new itemArray();
+}
+
 function rate(id) {
     arr.rateRedir(id);
+}
+
+function add() {
+    arr.addItem();
 }

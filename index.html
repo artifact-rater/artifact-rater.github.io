@@ -14,7 +14,7 @@
     <section>
         <div class="spacer"></div>
         <h1 class="text-center">Artifact Rater</h1>
-        <p class="text-center"><sub>v0.02</sub></p>
+        <p class="text-center"><sub>v0.03</sub></p>
         <p class="text-center"><sub>Enter values and hit the rate button.</sub></p>
         <div class="spacer"></div>
     </section>
@@ -24,86 +24,223 @@
         <div id="grid-container" class="grid-container">
             
             <div id="datablockTemplate" class="datablock, hidden">
+                    <b>+ </b><input type="text" id="lvl" size="1" maxlength="2" placeholder="0">
+                    <select name="set" id="set" width=3rem>
+                        <option value=0>Gladiator's Finale</option>
+                        <option value=1>Wanderer's Troupe</option>
+                        <option value=2>Archaic Petra</option>
+                        <option value=3>Retracing Bolide</option>
+                        <option value=4>Thundering Fury</option>
+                        <option value=5>Thundersoother</option>
+                        <option value=6>Viridescent Venerer</option>
+                        <option value=7>Maiden Beloved</option>
+                        <option value=8>Crimson Witch of Flames</option>
+                        <option value=9>Lavawalker</option>
+                        <option value=10>Bloodstained Chivalry</option>
+                        <option value=11>Noblesse Oblige</option>
+                        <option value=12>Blizzard Strayer</option>
+                        <option value=13>Heart of Depth</option>
+                        <option value=14>Tenacity of the Millelith</option>
+                        <option value=15>Pale Flame</option>
+                    </select>
+                <br>
+                <br>
                 <span class="span-inline">
                     <span class="attribute-label">Target substat #1</span>
                     <select name="tss1" id="tss1">
-                        <option value="a">ATK</option>
-                        <option value="a%">ATK%</option>
-                        <option value="cd">CRIT DMG</option>
-                        <option value="cr">CRIT RATE</option>
-                        <option value="d">DEF</option>
-                        <option value="d%">DEF%</option>
-                        <option value="em">EM</option>
-                        <option value="er">ER</option>
-                        <option value="hp">HP</option>
-                        <option value="h%">HP%</option>
+                        <option value=0>NONE</option>
+                        <option value=1>ATK</option>
+                        <option value=2>ATK%</option>
+                        <option value=3>CRIT DMG</option>
+                        <option value=4>CRIT RATE</option>
+                        <option value=5>DEF</option>
+                        <option value=6>DEF%</option>
+                        <option value=7>EM</option>
+                        <option value=8>ER</option>
+                        <option value=9>HP</option>
+                        <option value=10>HP%</option>
                     </select>
                     <br>
                 </span>
                 <span class="span-inline">
                     <span class="attribute-label">Target substat #2</span>
                     <select name="tss2" id="tss2">
-                        <option value="a">ATK</option>
-                        <option value="a%">ATK%</option>
-                        <option value="cd">CRIT DMG</option>
-                        <option value="cr">CRIT RATE</option>
-                        <option value="d">DEF</option>
-                        <option value="d%">DEF%</option>
-                        <option value="em">EM</option>
-                        <option value="er">ER</option>
-                        <option value="hp">HP</option>
-                        <option value="h%">HP%</option>
+                        <option value=0>NONE</option>
+                        <option value=1>ATK</option>
+                        <option value=2>ATK%</option>
+                        <option value=3>CRIT DMG</option>
+                        <option value=4>CRIT RATE</option>
+                        <option value=5>DEF</option>
+                        <option value=6>DEF%</option>
+                        <option value=7>EM</option>
+                        <option value=8>ER</option>
+                        <option value=9>HP</option>
+                        <option value=10>HP%</option>
                     </select>
                     <br>
                 </span>
                 <span class="span-inline">
                     <span class="attribute-label">Target substat #3</span>
                     <select name="tss3" id="tss3">
-                        <option value="a">ATK</option>
-                        <option value="a%">ATK%</option>
-                        <option value="cd">CRIT DMG</option>
-                        <option value="cr">CRIT RATE</option>
-                        <option value="d">DEF</option>
-                        <option value="d%">DEF%</option>
-                        <option value="em">EM</option>
-                        <option value="er">ER</option>
-                        <option value="hp">HP</option>
-                        <option value="h%">HP%</option>
+                        <option value=0>NONE</option>
+                        <option value=1>ATK</option>
+                        <option value=2>ATK%</option>
+                        <option value=3>CRIT DMG</option>
+                        <option value=4>CRIT RATE</option>
+                        <option value=5>DEF</option>
+                        <option value=6>DEF%</option>
+                        <option value=7>EM</option>
+                        <option value=8>ER</option>
+                        <option value=9>HP</option>
+                        <option value=10>HP%</option>
                     </select>
                     <br>
                 </span>
                 <span class="span-inline">
                     <span class="attribute-label">Target substat #4</span>
                     <select name="tss4" id="tss4">
-                        <option value="a">ATK</option>
-                        <option value="a%">ATK%</option>
-                        <option value="cd">CRIT DMG</option>
-                        <option value="cr">CRIT RATE</option>
-                        <option value="d">DEF</option>
-                        <option value="d%">DEF%</option>
-                        <option value="em">EM</option>
-                        <option value="er">ER</option>
-                        <option value="hp">HP</option>
-                        <option value="h%">HP%</option>
+                        <option value=0>NONE</option>
+                        <option value=1>ATK</option>
+                        <option value=2>ATK%</option>
+                        <option value=3>CRIT DMG</option>
+                        <option value=4>CRIT RATE</option>
+                        <option value=5>DEF</option>
+                        <option value=6>DEF%</option>
+                        <option value=7>EM</option>
+                        <option value=8>ER</option>
+                        <option value=9>HP</option>
+                        <option value=10>HP%</option>
                     </select>
                     <br>
                 </span>
                 <span class="span-inline">
                     <span class="attribute-label">Target substat #5</span>
                     <select name="tss5" id="tss5">
-                        <option value="a">ATK</option>
-                        <option value="a%">ATK%</option>
-                        <option value="cd">CRIT DMG</option>
-                        <option value="cr">CRIT RATE</option>
-                        <option value="d">DEF</option>
-                        <option value="d%">DEF%</option>
-                        <option value="em">EM</option>
-                        <option value="er">ER</option>
-                        <option value="hp">HP</option>
-                        <option value="h%">HP%</option>
+                        <option value=0>NONE</option>
+                        <option value=1>ATK</option>
+                        <option value=2>ATK%</option>
+                        <option value=3>CRIT DMG</option>
+                        <option value=4>CRIT RATE</option>
+                        <option value=5>DEF</option>
+                        <option value=6>DEF%</option>
+                        <option value=7>EM</option>
+                        <option value=8>ER</option>
+                        <option value=9>HP</option>
+                        <option value=10>HP%</option>
                     </select>
                     <br>
                 </span>
+                <hr>
+                <h5>Main Stat</h5>
+                <div>
+                    <table width="100%">
+                        <tr>
+                            <td width="50%">
+                                <select name="ms" id="ms">
+                                    <option value=0>NONE</option>
+                                    <option value=1>ATK</option>
+                                    <option value=2>ATK%</option>
+                                    <option value=3>CRIT DMG</option>
+                                    <option value=4>CRIT RATE</option>
+                                    <option value=5>DEF</option>
+                                    <option value=6>DEF%</option>
+                                    <option value=7>EM</option>
+                                    <option value=8>ER</option>
+                                    <option value=9>HP</option>
+                                    <option value=10>HP%</option>
+                                </select>
+                            </td>
+                            <td width="50%">
+                                <input type="text" id="ims" size="3" maxlength="4" placeholder="0.0">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <h5>Substats</h5>
+                <div>
+                    <table width="100%">
+                        <tr>
+                            <td width="50%">
+                                <select name="ss1" id="ss1">
+                                    <option value=0>NONE</option>
+                                    <option value=1>ATK</option>
+                                    <option value=2>ATK%</option>
+                                    <option value=3>CRIT DMG</option>
+                                    <option value=4>CRIT RATE</option>
+                                    <option value=5>DEF</option>
+                                    <option value=6>DEF%</option>
+                                    <option value=7>EM</option>
+                                    <option value=8>ER</option>
+                                    <option value=9>HP</option>
+                                    <option value=10>HP%</option>
+                                </select>
+                            </td>
+                            <td width="50%">
+                                <input type="text" id="iss1" size="3" maxlength="4" placeholder="0.0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%">
+                                <select name="ss2" id="ss2">
+                                    <option value=0>NONE</option>
+                                    <option value=1>ATK</option>
+                                    <option value=2>ATK%</option>
+                                    <option value=3>CRIT DMG</option>
+                                    <option value=4>CRIT RATE</option>
+                                    <option value=5>DEF</option>
+                                    <option value=6>DEF%</option>
+                                    <option value=7>EM</option>
+                                    <option value=8>ER</option>
+                                    <option value=9>HP</option>
+                                    <option value=10>HP%</option>
+                                </select>
+                            </td>
+                            <td width="50%">
+                                <input type="text" id="iss2" size="3" maxlength="4" placeholder="0.0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%">
+                                <select name="ss3" id="ss3">
+                                    <option value=0>NONE</option>
+                                    <option value=1>ATK</option>
+                                    <option value=2>ATK%</option>
+                                    <option value=3>CRIT DMG</option>
+                                    <option value=4>CRIT RATE</option>
+                                    <option value=5>DEF</option>
+                                    <option value=6>DEF%</option>
+                                    <option value=7>EM</option>
+                                    <option value=8>ER</option>
+                                    <option value=9>HP</option>
+                                    <option value=10>HP%</option>
+                                </select>
+                            </td>
+                            <td width="50%">
+                                <input type="text" id="iss3" size="3" maxlength="4" placeholder="0.0">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td width="50%">
+                                <select name="ss4" id="ss4">
+                                    <option value=0>NONE</option>
+                                    <option value=1>ATK</option>
+                                    <option value=2>ATK%</option>
+                                    <option value=3>CRIT DMG</option>
+                                    <option value=4>CRIT RATE</option>
+                                    <option value=5>DEF</option>
+                                    <option value=6>DEF%</option>
+                                    <option value=7>EM</option>
+                                    <option value=8>ER</option>
+                                    <option value=9>HP</option>
+                                    <option value=10>HP%</option>
+                                </select>
+                            </td>
+                            <td width="50%">
+                                <input type="text" id="iss4" size="3" maxlength="4" placeholder="0.0">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
                 <br>
                 <button type="button" onclick="rate(-1)">Rate</button>
                 <section>
@@ -112,6 +249,11 @@
             </div>
 
         </div>
+    </section>
+
+    <br>
+    <section class="text-center">
+        <button type="button" onclick="add()">Add +</button>
     </section>
 
     <!-- scripts -->
