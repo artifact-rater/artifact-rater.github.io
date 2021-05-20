@@ -15,9 +15,9 @@
         <div class="spacer"></div>
         <h1 class="text-center">Artifact Rater</h1>
         <p class="text-center"><sub>
-            <b>v0.03</b>
-            <br>You can now create an unlimited number of items,
-            <br>but rating still does not work...
+            <b>v0.04</b>
+            <br>The rater now determines the current quality of +0 artifacts,
+            <br>but does not account for enhanced artifacts nor determines the maximum potential of it...
         </sub></p>
         <div class="spacer"></div>
     </section>
@@ -49,7 +49,7 @@
                 <br>
                 <br>
                 <span class="span-inline">
-                    <span class="attribute-label">Target substat #1</span>
+                    <span class="attribute-label">Desired substat #1</span>
                     <select name="tss1" id="tss1">
                         <option value=0>NONE</option>
                         <option value=1>ATK</option>
@@ -66,7 +66,7 @@
                     <br>
                 </span>
                 <span class="span-inline">
-                    <span class="attribute-label">Target substat #2</span>
+                    <span class="attribute-label">Desired substat #2</span>
                     <select name="tss2" id="tss2">
                         <option value=0>NONE</option>
                         <option value=1>ATK</option>
@@ -83,7 +83,7 @@
                     <br>
                 </span>
                 <span class="span-inline">
-                    <span class="attribute-label">Target substat #3</span>
+                    <span class="attribute-label">Desired substat #3</span>
                     <select name="tss3" id="tss3">
                         <option value=0>NONE</option>
                         <option value=1>ATK</option>
@@ -100,7 +100,7 @@
                     <br>
                 </span>
                 <span class="span-inline">
-                    <span class="attribute-label">Target substat #4</span>
+                    <span class="attribute-label">Desired substat #4</span>
                     <select name="tss4" id="tss4">
                         <option value=0>NONE</option>
                         <option value=1>ATK</option>
@@ -117,7 +117,7 @@
                     <br>
                 </span>
                 <span class="span-inline">
-                    <span class="attribute-label">Target substat #5</span>
+                    <span class="attribute-label">Desired substat #5</span>
                     <select name="tss5" id="tss5">
                         <option value=0>NONE</option>
                         <option value=1>ATK</option>
@@ -247,7 +247,7 @@
                 <br>
                 <button type="button" onclick="rate(-1)">Rate</button>
                 <section>
-                    <h2 class="text-center, result-text" id="rst" style="display:none">Loading...</p>
+                    <h2 class="text-center, result-text" id="rst" style="display:none">Loading...</h2>
                 </section>
             </div>
 

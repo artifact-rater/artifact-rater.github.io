@@ -86,6 +86,10 @@ input {
     background-color: rgb(253, 251, 226);
 }
 
+.red-bg {
+    background-color: red;
+}
+
 .result-text {
     margin-top: 1rem;
 }
