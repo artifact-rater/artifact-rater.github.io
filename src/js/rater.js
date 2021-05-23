@@ -41,14 +41,6 @@ function evaluate(el, id) {
         {
             ratingIdv = 0;
 
-            // determine if this substat should be included
-            if (!(desired & (0x01 << el.querySelector("#ss" + i).value)))
-            {
-                el.querySelector("#ss" + i).style.backgroundColor = color_yellow;
-                el.querySelector("#iss" + i).style.backgroundColor = color_yellow;
-                continue;
-            }
-
             // check for valid range
             let stat_index = el.querySelector("#ss" + i).value;
             let stat_value = el.querySelector("#iss" + i).value * 10;
@@ -58,13 +50,21 @@ function evaluate(el, id) {
                 throw "Invalid Stat";
             }
 
-            // valid range, do value processing here
-            el.querySelector("#ss" + i).style.backgroundColor = color_green;
-            el.querySelector("#iss" + i).style.backgroundColor = color_green;
-
             // determine number of stat points that went into this
             let rolls = count_rolls(stat_value, stat_index);
             document.getElementById("rolls_" + id + "_" + i).innerHTML = rolls;
+
+            // determine if this substat should be included
+            if (!(desired & (0x01 << el.querySelector("#ss" + i).value)))
+            {
+                el.querySelector("#ss" + i).style.backgroundColor = color_yellow;
+                el.querySelector("#iss" + i).style.backgroundColor = color_yellow;
+                continue;
+            }
+
+            // valid range, do value processing here
+            el.querySelector("#ss" + i).style.backgroundColor = color_green;
+            el.querySelector("#iss" + i).style.backgroundColor = color_green;
 
             ratingIdv = (stat_value - stat_values[0][stat_index] * rolls) / stat_diffs[stat_index];
 
