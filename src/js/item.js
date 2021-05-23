@@ -5,7 +5,6 @@ class itemArray {
         this.data = [];
         if (!this.data.length) {
             this.addItem();
-            this.addItem();
         }
     }
 
@@ -31,14 +30,32 @@ class item {
         this.element.className = "datablock";
         this.element.innerHTML = document.getElementById("datablockTemplate").innerHTML;
         this.element.innerHTML = this.element.innerHTML.replace("rate(-1)", "rate(" + id + ")");
-        this.element.innerHTML = this.element.innerHTML.replace("rst", "rst" + id);
+        this.element.innerHTML = this.element.innerHTML.replace("rst-curr", "rst-curr" + id);
+        this.element.innerHTML = this.element.innerHTML.replace("rst-min", "rst-min" + id);
+        this.element.innerHTML = this.element.innerHTML.replace("rst-exp", "rst-exp" + id);
+        this.element.innerHTML = this.element.innerHTML.replace("rst-max", "rst-max" + id);
+
+        if (id)
+            for (let i = 1; i < 7; ++i)
+                this.element.querySelector("#tss" + i).value = arr.data[id - 1].element.querySelector("#tss" + i).value;
+
         document.getElementById("grid-container").appendChild(this.element);
     }
 
     rateImpl() {
-        var result = document.getElementById("rst" + this.id);
-        result.style.display='block';
-        result.innerHTML = evaluate(this.element);
+        var result = evaluate(this.element);
+        var el = document.getElementById("rst-curr" + this.id);
+        el.style.display='inline';
+        el.innerHTML = result[0].toFixed(2);
+        el = document.getElementById("rst-min" + this.id);
+        el.style.display='inline';
+        el.innerHTML = result[1].toFixed(2);
+        el = document.getElementById("rst-exp" + this.id);
+        el.style.display='inline';
+        el.innerHTML = result[2].toFixed(2);
+        el = document.getElementById("rst-max" + this.id);
+        el.style.display='inline';
+        el.innerHTML = result[3].toFixed(2);
     }
 }
 

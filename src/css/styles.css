@@ -1,5 +1,5 @@
 body {
-    background-color:ivory;
+    background-color:rgb(255, 255, 255);
     font-family: 'Open Sans';
     font-size: 0.8rem;
 }
@@ -68,6 +68,22 @@ input {
     text-align: center;
 }
 
+.inline {
+    display: inline;
+}
+
+.no-margin-top {
+    margin-top: 0px;
+}
+
+.no-margin-bottom {
+    margin-bottom: 0px;
+}
+
+.no-padding-bottom {
+    border-bottom: 0px;
+}
+
 .hidden {
     display: none;
 }
@@ -83,7 +99,7 @@ input {
     border-radius: 15px;
     text-align: center;
     float: left;
-    background-color: rgb(253, 251, 226);
+    background-color: rgb(226, 248, 255);
 }
 
 .red-bg {
@@ -115,4 +131,11 @@ input {
 .attribute-label {
     font-family: 'Open Sans';
     font-size: 0.85rem;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+
+   opacity: 1;
+
 }

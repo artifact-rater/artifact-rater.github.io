@@ -15,11 +15,10 @@
         <div class="spacer"></div>
         <h1 class="text-center">Artifact Rater</h1>
         <p class="text-center"><sub>
-            <b>v0.04</b>
-            <br>The rater now determines the current quality of +0 artifacts,
-            <br>but does not account for enhanced artifacts nor determines the maximum potential of it...
+            <b>v0.05</b>
+            <br>The rater now determines the current quality of all artifact levels.
+            <br><i>For feedback and suggestions, please send them <b><a href="https://github.com/artifact-rater/artifact-rater.github.io/discussions/categories/ideas">here!</a></b></i>
         </sub></p>
-        <div class="spacer"></div>
     </section>
 
     <!-- data -->
@@ -27,7 +26,7 @@
         <div id="grid-container" class="grid-container">
             
             <div id="datablockTemplate" class="datablock, hidden">
-                    <b>+ </b><input type="text" id="lvl" size="1" maxlength="2" placeholder="0">
+                    <b>+ </b><input type="number" name="lvl" id="lvl" min="0" max="20" style="width:2rem" maxlength="2" placeholder="0">
                     <select name="set" id="set" width=3rem>
                         <option value=0>Gladiator's Finale</option>
                         <option value=1>Wanderer's Troupe</option>
@@ -48,14 +47,16 @@
                     </select>
                 <br>
                 <br>
+                <h5 style="background-color: rgb(203, 234, 253)">Desired Substats</h5>
+                <br>
                 <span class="span-inline">
-                    <span class="attribute-label">Desired substat #1</span>
+                    #1
                     <select name="tss1" id="tss1">
                         <option value=0>NONE</option>
                         <option value=1>ATK</option>
                         <option value=2>ATK%</option>
-                        <option value=3>CRIT DMG</option>
-                        <option value=4>CRIT RATE</option>
+                        <option value=3>CDMG</option>
+                        <option value=4>CRATE</option>
                         <option value=5>DEF</option>
                         <option value=6>DEF%</option>
                         <option value=7>EM</option>
@@ -63,16 +64,13 @@
                         <option value=9>HP</option>
                         <option value=10>HP%</option>
                     </select>
-                    <br>
-                </span>
-                <span class="span-inline">
-                    <span class="attribute-label">Desired substat #2</span>
+                    #2
                     <select name="tss2" id="tss2">
                         <option value=0>NONE</option>
                         <option value=1>ATK</option>
                         <option value=2>ATK%</option>
-                        <option value=3>CRIT DMG</option>
-                        <option value=4>CRIT RATE</option>
+                        <option value=3>CDMG</option>
+                        <option value=4>CRATE</option>
                         <option value=5>DEF</option>
                         <option value=6>DEF%</option>
                         <option value=7>EM</option>
@@ -81,15 +79,13 @@
                         <option value=10>HP%</option>
                     </select>
                     <br>
-                </span>
-                <span class="span-inline">
-                    <span class="attribute-label">Desired substat #3</span>
+                    #3
                     <select name="tss3" id="tss3">
                         <option value=0>NONE</option>
                         <option value=1>ATK</option>
                         <option value=2>ATK%</option>
-                        <option value=3>CRIT DMG</option>
-                        <option value=4>CRIT RATE</option>
+                        <option value=3>CDMG</option>
+                        <option value=4>CRATE</option>
                         <option value=5>DEF</option>
                         <option value=6>DEF%</option>
                         <option value=7>EM</option>
@@ -97,16 +93,13 @@
                         <option value=9>HP</option>
                         <option value=10>HP%</option>
                     </select>
-                    <br>
-                </span>
-                <span class="span-inline">
-                    <span class="attribute-label">Desired substat #4</span>
+                    #4
                     <select name="tss4" id="tss4">
                         <option value=0>NONE</option>
                         <option value=1>ATK</option>
                         <option value=2>ATK%</option>
-                        <option value=3>CRIT DMG</option>
-                        <option value=4>CRIT RATE</option>
+                        <option value=3>CDMG</option>
+                        <option value=4>CRATE</option>
                         <option value=5>DEF</option>
                         <option value=6>DEF%</option>
                         <option value=7>EM</option>
@@ -115,15 +108,27 @@
                         <option value=10>HP%</option>
                     </select>
                     <br>
-                </span>
-                <span class="span-inline">
-                    <span class="attribute-label">Desired substat #5</span>
+                    #5
                     <select name="tss5" id="tss5">
                         <option value=0>NONE</option>
                         <option value=1>ATK</option>
                         <option value=2>ATK%</option>
-                        <option value=3>CRIT DMG</option>
-                        <option value=4>CRIT RATE</option>
+                        <option value=3>CDMG</option>
+                        <option value=4>CRATE</option>
+                        <option value=5>DEF</option>
+                        <option value=6>DEF%</option>
+                        <option value=7>EM</option>
+                        <option value=8>ER</option>
+                        <option value=9>HP</option>
+                        <option value=10>HP%</option>
+                    </select>
+                    #6
+                    <select name="tss6" id="tss6">
+                        <option value=0>NONE</option>
+                        <option value=1>ATK</option>
+                        <option value=2>ATK%</option>
+                        <option value=3>CDMG</option>
+                        <option value=4>CRATE</option>
                         <option value=5>DEF</option>
                         <option value=6>DEF%</option>
                         <option value=7>EM</option>
@@ -133,8 +138,9 @@
                     </select>
                     <br>
                 </span>
-                <hr>
-                <h5>Main Stat</h5>
+                <br>
+                <h5 style="background-color: rgb(203, 234, 253)">Main Stat</h5>
+                <br>
                 <div>
                     <table width="100%">
                         <tr>
@@ -159,7 +165,9 @@
                         </tr>
                     </table>
                 </div>
-                <h5>Substats</h5>
+                <br>
+                <h5 style="background-color: rgb(203, 234, 253)">Substats</h5>
+                <br>
                 <div>
                     <table width="100%">
                         <tr>
@@ -247,7 +255,30 @@
                 <br>
                 <button type="button" onclick="rate(-1)">Rate</button>
                 <section>
-                    <h2 class="text-center, result-text" id="rst" style="display:none">Loading...</h2>
+                    <table width="100%" class="inline">
+                        <tr class="no-margin-bottom">
+                            <td width="33%"></td>
+                            <td width="33%">
+                                <p class="no-margin-bottom"><b>CURRENT</b></p>
+                                <h2 class="text-center, result-text, no-margin-top" id="rst-curr" style="display:none">Loading...</h2>
+                            </td>
+                            <td width="33%"></td>
+                        </tr>
+                        <tr>
+                            <td width="33%">
+                                <p class="no-margin-bottom"><sub>MIN</sub></p>
+                                <h3 class="text-center, result-text, no-margin-top" id="rst-min" style="display:none">Loading...</h3>
+                            </td>
+                            <td width="33%">
+                                <p class="no-margin-bottom"><sub>EXPECTED</sub></p>
+                                <h2 class="text-center, result-text, no-margin-top" id="rst-exp" style="display:none">Loading...</h2>
+                            </td>
+                            <td width="33%">
+                                <p class="no-margin-bottom"><sub>MAX</sub></p>
+                                <h3 class="text-center, result-text, no-margin-top" id="rst-max" style="display:none">Loading...</h3>
+                            </td>
+                        </tr>
+                    </table>
                 </section>
             </div>
 
