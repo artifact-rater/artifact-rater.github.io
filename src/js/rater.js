@@ -11,7 +11,7 @@ function evaluate(el) {
     // make bitset of desired subsets 
     let desired = 0x00, desired_count = 0x00, ratingSum = 0x00, ratingIdv = 0x00;
     var i = 1;
-    for (; i < 6; ++i)
+    for (; i < 7; ++i)
         desired |= 0x01 << el.querySelector("#tss" + i).value;
     desired &= ~(0x01 << 0);    // clear last bit (NONE bit)
 
@@ -20,6 +20,8 @@ function evaluate(el) {
         // loop through each substat
         for (i = 1; i < 5; ++i)
         {
+            ratingIdv = 0;
+
             // determine if this substat should be included
             if (!(desired & (0x01 << el.querySelector("#ss" + i).value)))
             {
@@ -40,9 +42,19 @@ function evaluate(el) {
             // valid range, do value processing here
             el.querySelector("#ss" + i).style.backgroundColor = color_green;
             el.querySelector("#iss" + i).style.backgroundColor = color_green;
-            ratingIdv = (stat_value - min_stat_values[stat_index]) / stat_diffs[stat_index];
+
+            // determine number of stat points that went into this
+            let a = 1, s = stat_value;
+            while (s > max_stat_values[stat_index])
+            {
+                s -= max_stat_values[stat_index];
+                ++a;
+            }
+
+            ratingIdv = (stat_value - min_stat_values[stat_index] * a) / stat_diffs[stat_index];
 
             ratingSum += ratingIdv;
+            alert(ratingIdv);
             ++desired_count;
         }
     }
