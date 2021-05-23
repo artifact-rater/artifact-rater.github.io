@@ -18,8 +18,10 @@
         <div class="spacer"></div>
         <h1 class="text-center">Artifact Rater</h1>
         <p class="text-center"><sub>
-            <b>v0.07</b>
-            <br>Fixed some calculations relating to upgraded artifacts
+            <b>v0.08</b>
+            <br>- Fixed some calculations relating to upgraded artifacts with highly specialized substats.
+            <br>- Display number of rolls that went into each substat.
+            <br>
             <br><i>For feedback and suggestions, please send them <b><a href="https://github.com/artifact-rater/artifact-rater.github.io/discussions/categories/ideas">here!</a></b></i>
         </sub></p>
     </section>
@@ -189,8 +191,11 @@
                                     <option value=10>HP%</option>
                                 </select>
                             </td>
-                            <td width="50%">
+                            <td width="25%">
                                 <input type="text" id="iss1" size="3" maxlength="4" placeholder="0.0">
+                            </td>
+                            <td width="10%">
+                                <div id="rolls1" class="rolls-indicator">0</div>
                             </td>
                         </tr>
                         <tr>
@@ -209,8 +214,11 @@
                                     <option value=10>HP%</option>
                                 </select>
                             </td>
-                            <td width="50%">
+                            <td width="25%">
                                 <input type="text" id="iss2" size="3" maxlength="4" placeholder="0.0">
+                            </td>
+                            <td width="10%">
+                                <div id="rolls2" class="rolls-indicator">0</div>
                             </td>
                         </tr>
                         <tr>
@@ -229,8 +237,11 @@
                                     <option value=10>HP%</option>
                                 </select>
                             </td>
-                            <td width="50%">
+                            <td width="25%">
                                 <input type="text" id="iss3" size="3" maxlength="4" placeholder="0.0">
+                            </td>
+                            <td width="10%">
+                                <div id="rolls3" class="rolls-indicator">0</div>
                             </td>
                         </tr>
                         <tr>
@@ -249,8 +260,11 @@
                                     <option value=10>HP%</option>
                                 </select>
                             </td>
-                            <td width="50%">
+                            <td width="25%">
                                 <input type="text" id="iss4" size="3" maxlength="4" placeholder="0.0">
+                            </td>
+                            <td width="10%">
+                                <div id="rolls4" class="rolls-indicator">0</div>
                             </td>
                         </tr>
                     </table>

@@ -35,6 +35,9 @@ class item {
         this.element.innerHTML = this.element.innerHTML.replace("rst-exp", "rst-exp" + id);
         this.element.innerHTML = this.element.innerHTML.replace("rst-max", "rst-max" + id);
 
+        for (let i = 1; i < 5; ++i)
+            this.element.innerHTML = this.element.innerHTML.replace("rolls" + i, "rolls_" + id + "_" + i);
+
         if (id)
             for (let i = 1; i < 7; ++i)
                 this.element.querySelector("#tss" + i).value = arr.data[id - 1].element.querySelector("#tss" + i).value;
@@ -43,7 +46,7 @@ class item {
     }
 
     rateImpl() {
-        var result = evaluate(this.element);
+        var result = evaluate(this.element, this.id);
         var el = document.getElementById("rst-curr" + this.id);
         el.style.display='inline';
         el.innerHTML = result[0].toFixed(2);

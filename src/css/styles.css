@@ -133,6 +133,14 @@ input {
     font-size: 0.85rem;
 }
 
+.rolls-indicator {
+    font-weight: bold;
+    border: 0.1rem solid grey;
+    border-radius: 0.3rem;
+    min-width: 1rem;
+    background-color: rgb(228, 228, 228);
+}
+
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button {  
 

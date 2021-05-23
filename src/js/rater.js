@@ -1,12 +1,31 @@
 var color_red = "rgb(255, 190, 184)";
 var color_yellow = "rgb(255, 241, 184)";
 var color_green = "rgb(184, 255, 186)";
-var min_stat_values = [0, 14, 4.1, 5.4, 2.7, 16, 5.1, 16, 4.5, 209, 4.1];
-var max_stat_values = [0, 19, 5.8, 7.8, 3.9, 23, 7.3, 23, 6.5, 299, 5.8];
-var stat_diffs = [0, 5, 1.7, 2.4, 1.2, 7, 2.2, 7, 2, 90, 1.7];
+//  multiplied by 10  A    A%  CD  C%  D    D%  EM   ER  HP    HP%
+var stat_values =  [ [0, 140, 41, 54, 27, 160, 51, 160, 45, 2090, 41],
+                     [0, 160, 47, 62, 31, 190, 58, 190, 52, 2390, 47],
+                     [0, 180, 53, 70, 35, 210, 66, 210, 58, 2690, 53],
+                     [0, 190, 58, 78, 39, 230, 73, 230, 65, 2990, 58] ];
+var stat_diffs =     [0, 50,  17, 24, 12, 70,  22, 70,  20, 900,  17];
 var max_allocs = 9;
 
-function evaluate(el) {
+function count_rolls(value, stat_index/*, start_index*/) {
+
+    if (value < 0)
+        return -1;
+    else if (value == 0)
+    {
+        return 0;
+    }
+
+    for (let i = 0; i < 4; ++i)
+    {
+        let v = count_rolls(value - stat_values[i][stat_index], stat_index);
+        if (v >= 0) return v + 1;
+    }
+}
+
+function evaluate(el, id) {
     
     // make bitset of desired subsets 
     let desired = 0x00, desired_count = 0x00, ratingSum = 0x00, ratingIdv = 0x00;
@@ -32,8 +51,8 @@ function evaluate(el) {
 
             // check for valid range
             let stat_index = el.querySelector("#ss" + i).value;
-            let stat_value = el.querySelector("#iss" + i).value;
-            if (stat_value < min_stat_values[stat_index] || stat_value > max_stat_values[stat_index] * 6)
+            let stat_value = el.querySelector("#iss" + i).value * 10;
+            if (stat_value < stat_values[0][stat_index] || stat_value > stat_values[3][stat_index] * 6)
             {
                 el.querySelector("#iss" + i).style.backgroundColor = color_red;
                 throw "Invalid Stat";
@@ -44,17 +63,13 @@ function evaluate(el) {
             el.querySelector("#iss" + i).style.backgroundColor = color_green;
 
             // determine number of stat points that went into this
-            let a = 1, s = stat_value;
-            while (s > max_stat_values[stat_index])
-            {
-                s -= max_stat_values[stat_index];
-                ++a;
-            }
+            let rolls = count_rolls(stat_value, stat_index);
+            document.getElementById("rolls_" + id + "_" + i).innerHTML = rolls;
 
-            ratingIdv = (stat_value - min_stat_values[stat_index] * a) / stat_diffs[stat_index];
+            ratingIdv = (stat_value - stat_values[0][stat_index] * rolls) / stat_diffs[stat_index];
 
             ratingSum += ratingIdv;
-            alert(ratingIdv);
+            //alert(ratingIdv);
             ++desired_count;
         }
     }
